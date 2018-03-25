@@ -11,4 +11,4 @@ For detecting the face in the photo I used the opencv haarcascade frontal face d
 
 ![Alt text](https://github.com/RishalAggarwal/face-detection-linked-list/blob/master/face%20detec%20%2B%20linked%20list/face_detect1.png) 
 
-![Alt text]()
+![Alt text](https://github.com/RishalAggarwal/face-detection-linked-list/blob/master/face%20detec%20%2B%20linked%20list/face_detect2.png)
