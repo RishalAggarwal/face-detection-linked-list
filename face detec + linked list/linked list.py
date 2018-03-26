@@ -49,9 +49,8 @@ class Linked_List:
 									#the function
 									
 	def display_cycle(self):					#displaying the cycle, it's displayed in the form a list where 
-									#the start of the loop is at the beginning and the ending of the
-		cur=Linked_List.locate_cycle(self)			#loop
-		if cur.data==-1:
+		cur=Linked_List.locate_cycle(self)			#the start of the loop is at the beginning and the ending of 
+		if cur.data==-1:					#the list
 			print 'No loop in cycle'
 		else:
 			data=cur.data
