@@ -2,7 +2,6 @@ class node:
 	def __init__(self, data=None):
 		self.data = data
 		self.next = None
-		self.cflag = 0
 
 
 class Linked_List:
