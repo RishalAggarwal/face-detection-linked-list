@@ -35,7 +35,7 @@ class Linked_List:
 				cflag = 0						#and doesn't contain a loop
 				break
 			if hare.data==tort.data:					#condition comes true if there's a loop
-				tort=self.head						#getting tortoise back to the head pointer to
+				tort=self.head						#getting tortoise back to the head pointer
 				break							#used to find the start of the loop
 		if cflag:
 			while hare.data!=tort.data:					#finding the location of the start of the loop
