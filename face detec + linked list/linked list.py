@@ -21,36 +21,36 @@ class Linked_List:
 				new_node.next = cur
 				return
 		if cur.next == None:
-			print('Node not in list')
+			print('Node not in list, appending new node to end of list')
 
 	def locate_cycle(self):						#locating the node where the cycle has been joined
-		tort = self.head
-		hare=self.head
+		tort = self.head					#Floyd Detection Algorithm, Hare(hare) pointer travels two nodes 
+		hare=self.head						#in an iteration whereas tortoise(tort) travels one node 
 		cflag=1
 		while True:
 			tort = tort.next
 			hare=hare.next
 			hare=hare.next
-			if hare==None or hare.next==None or tort.next==None:
-				cflag = 0
+			if hare==None or hare.next==None or tort.next==None:		#condition to check if it's a linear linked list
+				cflag = 0						#and doesn't contain a loop
 				break
-			if hare.data==tort.data:
-				tort=self.head
-				break
+			if hare.data==tort.data:					#condition comes true if there's a loop
+				tort=self.head						#getting tortoise back to the head pointer to
+				break							#used to find the start of the loop
 		if cflag:
-			while hare.data!=tort.data:
+			while hare.data!=tort.data:					#finding the location of the start of the loop
 				hare=hare.next
 				tort=tort.next
-			return tort
+			return tort							#returns the location of the start of the loop
 		else:
 			return node(-1)					#assuming all valid nodes are given positive integers for their 
 									#data, this can be used to check if the linked list has a loop 
 									#as -1 is passed as the data of the node which is returned by 
 									#the function
 									
-	def display_cycle(self):					#displaying the cycle
-
-		cur=Linked_List.locate_cycle(self)
+	def display_cycle(self):					#displaying the cycle, it's displayed in the form a list where 
+									#the start of the loop is at the beginning and the ending of the
+		cur=Linked_List.locate_cycle(self)			#loop
 		if cur.data==-1:
 			print 'No loop in cycle'
 		else:
@@ -64,17 +64,17 @@ class Linked_List:
 			elems.append(data)
 			print elems
 
-	def append(self, data):
+	def append(self, data):						#append a node to the end of the loop
 		new_node = node(data)
 		cur = self.head
 		while cur.next != None:
 			cur = cur.next
 		cur.next = new_node
 
-	def loop_length(self):				#number of nodes in the cycle
+	def loop_length(self):						#number of nodes in the cycle
 		cur = Linked_List.locate_cycle(self)
 		if cur.data == -1:
-			return 'No loop in cycle'
+			return 0
 		else:
 			data = cur.data
 			total=1
@@ -82,11 +82,11 @@ class Linked_List:
 			while cur.data != data:
 				total+=1
 				cur = cur.next
-			return total
+			return total					#returns total number of nodes in loop
 
 
-	def length(self):				#total number of nodes in the linked list
-		cur = self.head
+	def length(self):						#total number of nodes in the linked list (including the nodes
+		cur = self.head						#in the loop)
 		loop = Linked_List.locate_cycle(self)
 		if loop.data == -1:
 			total = 0
@@ -96,10 +96,10 @@ class Linked_List:
 			total += 1
 			cur = cur.next
 
-		return total
+		return total						#returns total number of nodes in the list
 
-	def display(self):
-		elems = []
+	def display(self):					#displaying all the nodes in the linked list (including the nodes in the 
+		elems = []					#loop) in the form of of a list 
 		cur_node = self.head
 		while cur_node.next != None:
 			cur_node = cur_node.next
@@ -108,8 +108,8 @@ class Linked_List:
 			elems.append(cur_node.data)
 		print(elems)
 
-	def remove(self, data):
-		cur_node = self.head
+	def remove(self, data):					#removing a node with data equal to the value passed to the data 
+		cur_node = self.head				#parameter of the method 
 		while cur_node.next != None:
 			last_node = cur_node
 			cur_node = cur_node.next
@@ -118,7 +118,7 @@ class Linked_List:
 				break
 
 	def insert(self, data, data_of_prev):			#inserting node at a certain location. Data of prev is the data of the 
-		cur_node=self.head				#node after whic a certain node has to be inserted
+		cur_node=self.head				#node after which the node has to be inserted
 		while True:
 			cur_node=cur_node.next
 			if cur_node.data == data_of_prev:
