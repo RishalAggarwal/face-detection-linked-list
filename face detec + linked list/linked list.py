@@ -38,7 +38,7 @@ class Linked_List:
 			cur1=cur1.next
 
 		if cur.next == None:
-			return node(-1)					#assuming all valid nodes are give positive integers for their 
+			return node(-1)					#assuming all valid nodes are given positive integers for their 
 		else:							#data, this can be used to check if the linked list has a loop 
 			return cur					#as -1 is passed as the data of the node which is returned by 
 									#the function
