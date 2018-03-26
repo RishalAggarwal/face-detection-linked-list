@@ -25,22 +25,28 @@ class Linked_List:
 			print('Node not in list')
 
 	def locate_cycle(self):						#locating the node where the cycle has been joined
-		cur = self.head
-		while cur.next != None:
-			if cur.cflag != 1:
-				cur.cflag = 1
-				cur = cur.next
-			else:
+		tort = self.head
+		hare=self.head
+		cflag=1
+		while True:
+			tort = tort.next
+			hare=hare.next
+			hare=hare.next
+			if hare.next==None or tort.next==None:
+				cflag = 0
 				break
-		cur1=self.head
-		while cur1.next !=None and cur1.cflag==1:
-			cur1.cflag=0
-			cur1=cur1.next
-
-		if cur.next == None:
+			if hare.data==tort.data:
+				tort=self.head
+				break
+		if cflag:
+			while hare.data!=tort.data:
+				hare=hare.next
+				tort=tort.next
+			return tort
+		else:
 			return node(-1)					#assuming all valid nodes are given positive integers for their 
-		else:							#data, this can be used to check if the linked list has a loop 
-			return cur					#as -1 is passed as the data of the node which is returned by 
+									#data, this can be used to check if the linked list has a loop 
+									#as -1 is passed as the data of the node which is returned by 
 									#the function
 									
 	def display_cycle(self):					#displaying the cycle
