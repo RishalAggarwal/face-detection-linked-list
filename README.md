@@ -7,7 +7,7 @@ The create_cycle function creates a loop in the linked list such that the last n
 
 ## Face Detection
 
-For detecting the face in the photo I used the opencv haarcascade frontal face detector. This returns rectanguar coordinates for the location of the face. I made the scaling factor 1.1 and the min no. of neighbors parameter as 5. For blurring the image I used a averaging kernal of size 25x25. Two samples of what it can do is given below. 
+For detecting the face in the photo I used the opencv haarcascade frontal face detector. This returns rectanguar coordinates for the location of the face. I made the scaling factor 1.1 and the min no. of neighbors parameter as 5. For blurring the image I used a averaging kernal of size 30x30. Two samples of what it can do is given below. 
 
 ![Alt text](https://github.com/RishalAggarwal/face-detection-linked-list/blob/master/face%20detec%20%2B%20linked%20list/face_detect1.png) 
 
