@@ -31,7 +31,7 @@ class Linked_List:
 			tort = tort.next
 			hare=hare.next
 			hare=hare.next
-			if hare.next==None or tort.next==None:
+			if hare==None or hare.next==None or tort.next==None:
 				cflag = 0
 				break
 			if hare.data==tort.data:
